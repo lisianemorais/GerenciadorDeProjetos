@@ -1,27 +1,68 @@
-## Laravel PHP Framework
+# Project Manager
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Foi desenvolvido uma aplicação com o objetivo de gerenciar projetos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+O usuário pode:
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+ - adicionar, alterar e excluir projetos, anotações, clientes e usuários.
 
-## Official Documentation
+ - O usuario podera alaterar o status do projeto para Em andamento, concluído.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+ - Na tela principal sera mostratdo todos os projetos e o progresso de cada um.
 
-## Contributing
+# Passo a Passo
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+- Clone este repositório para a pasta do seu servidor web :
+    - Exemplo: git clone https://github.com/lisianemorais/projectmanage.git /var/www/ProjectManager
+- No terminal, acesse o diretório recém criado e execute o comando "composer install" para que o composer possa baixar e instalar todas as dependências do projeto.
 
-## Security Vulnerabilities
+    Exemplo: cd /var/www/html/ProjectManager sudo composer install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+-   Após a instalação das dependências, crie o arquivo .env na raiz do projeto e o configure com os dados do ambiente de produção ( Banco de dados e etc... ).
+-   Agora temos que migrar as tabelas do banco de dados. No terminal, acesse o diretório da aplicação e rode o comando: php artisan migrate .
 
-### License
+-   Para acessar o sistema é necessário usuario e password
+    - user: user@projectmanager.com
+    - password: 123456
+# Vagrant-Setup
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+No diretorio vagrant estão os arquivos para confirgurar o Vagrant
+
+Servidor LAMP (Linux, Apache, MySQL, PHP)
+
+Configuração do Vagrant (com provisionamento em Shell Script) para criar uma máquina virtual (Ubuntu Server 14.04 64 Bits) de desenvolvimento em PHP.
+
+# Pacotes Inclusos:
+
+-   PHP 5.6
+-   MySQL 5.5
+-   Git
+-   PhpMyAdmin
+-   Composer
+-   cURL
+-   Vim
+-   Redis (Para mais detalhes consulte arquivo setup.sh)
+
+# Você vai precisar:
+
+ -  Virtualbox - https://www.virtualbox.org/
+ -  Vagrant - http://www.vagrantup.com/
+ 
+# Modo de Uso
+
+- Salve os arquivos em um diretório
+- Abra o Terminal, Entre no diretório vagrant ( Ou o que você definir na hora de salvar )
+- Inicie a máquina virtual com o comando:
+    - vagrant up
+
+Após este comando 'vagrant up', o Vagrant ficará responsavel por baixar o sistema operacional ( neste caso Ubuntu Server 64 ), configurar a máquina virtual no VirtualBox e posteriormente baixar, instalar e configurar todos os pacotes do script 'setup.sh' (A primeira vez realmente é um pouco mais demorado).
+
+Quando tudo estiver pronto, um servidor web estará disponível no endereço http://localhost:8080, e a instalação do PHPMyAdmin está em http://localhost:8080/phpmyadmin, para acessar utilize:
+
+    Login: root
+    Senha: vagrant
+
+obs:(A senha padrão para todos os serviços é vagrant).
+
+Coloque seu código no diretório "www". Todo o conteúdo dele estará disponível via http://localhost:8080. 
+
