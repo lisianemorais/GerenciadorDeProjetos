@@ -24,6 +24,7 @@ O usuário pode:
 -   Para acessar o sistema é necessário usuario e password
     - user: user@projectmanager.com
     - password: 123456
+
 # Vagrant-Setup
 
 No diretorio vagrant estão os arquivos para confirgurar o Vagrant
